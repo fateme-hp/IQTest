@@ -2,7 +2,7 @@
 
 // select body
 let body = document.querySelector('body');
-let form = document.getElementById('form');
+
 
 // create elements for the first stage 
 
@@ -18,6 +18,8 @@ let nameLabel = document.createElement('label');
 nameLabel.setAttribute('for','input');
 // append child to form
 firstStage.appendChild(nameLabel);
+//append label 
+nameLabel.append('Name: ')
 // create an input for name 
 let userName = document.createElement('input');
 // set attributes for input
@@ -26,3 +28,16 @@ userName.setAttribute('id','input');
 userName.setAttribute('placeholder','name');
 // append child to form
 firstStage.appendChild(userName);
+// create an input for submit
+let submit = document.createElement('input');
+// set attributes for input
+submit.setAttribute('type','submit');
+userName.setAttribute('id','submit');
+// append child to form
+firstStage.appendChild(submit);
+// submit statement
+let formSpan = document.createElement('span');
+// append child to form
+firstStage.appendChild(formSpan);
+//append span 
+formSpan.append('IQ test will start after submitting name.')
