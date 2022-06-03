@@ -13,7 +13,7 @@
 /* css style */
 body {
   background-image: url("Images/bg.jpg");
-  background-repeat: no-repeat;
+  background-attachment: fixed;
   background-size: cover;
 }
 
@@ -74,4 +74,32 @@ body {
   background-color: #1a73e8;
 }
 
-/* first stage css style start */
+/* first stage css style end */
+
+/* second stage (test) css style start */
+.testContainer {
+  margin: 5% auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #eee;
+  padding: 2%;
+  border-radius: 5px;
+  width: 900px;
+  height:600px;
+}
+.testOptions{
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  width: 600px;
+  margin-top: 10px;
+  align-items: center;
+}
+.testOptions img {
+  border: 2px solid #2d2d2d;
+  margin:5px;
+  cursor: pointer;
+}
+
+/* second stage (test) css style start */

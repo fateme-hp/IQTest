@@ -75,7 +75,7 @@ for (let i = 1; i <= 30; i++) {
   // create an image element
   let img = document.createElement("img");
   // set attributes for img
-  //   img.setAttribute("src" ,"images/"+[i]+"/test"+[i]+".png")  ----یادت باشه برگردونی !!!
+    img.setAttribute("src" ,"images/"+[i]+"/test"+[i]+".png")  //----یادت باشه برگردونی !!!
   //append child to test image
   testImage.appendChild(img);
 
