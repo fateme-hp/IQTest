@@ -55,14 +55,20 @@ formSpan.append("IQ test will start after submitting name.");
 
 // create elements for the second stage (test)
 
+// create section for test 
+let testSection = document.createElement("section");
+// append child to body
+body.appendChild(testSection);
+
 // create elements for test
 for (let i = 1; i <= 30; i++) {
   // create a div container for test elements
   let testContainer = document.createElement("div");
   // set class for div
   testContainer.classList.add("testContainer");
-  // append child to body
-  body.appendChild(testContainer);
+  testContainer.classList.add("container"+[i]);
+  // append child to test section
+  testSection.appendChild(testContainer);
 
   // create a div container for test img
   let testImage = document.createElement("div");
@@ -83,6 +89,7 @@ for (let i = 1; i <= 30; i++) {
   let testOptions = document.createElement("div");
   // set class for div
   testOptions.classList.add("testOptions");
+  testOptions.classList.add("testOption" + [i]);
   // append child to test container
   testContainer.appendChild(testOptions);
 
@@ -111,3 +118,64 @@ for (let i = 1; i <= 30; i++) {
     }
   }
 }
+// adding class of correct to correct answers 
+// test 1
+document.querySelector(".testOption1 img:nth-child(3)").classList.add("correct");
+// test 2
+document.querySelector(".testOption2 img:nth-child(1)").classList.add("correct");
+// test 3
+document.querySelector(".testOption3 img:nth-child(5)").classList.add("correct");
+// test 4
+document.querySelector(".testOption4 img:nth-child(5)").classList.add("correct");
+// test 5
+document.querySelector(".testOption5 img:nth-child(2)").classList.add("correct");
+// test 6
+document.querySelector(".testOption6 img:nth-child(1)").classList.add("correct");
+// test 7
+document.querySelector(".testOption7 img:nth-child(2)").classList.add("correct");
+// test 8
+document.querySelector(".testOption8 img:nth-child(2)").classList.add("correct");
+// test 9
+document.querySelector(".testOption9 img:nth-child(2)").classList.add("correct");
+// test 10
+document.querySelector(".testOption10 img:nth-child(6)").classList.add("correct");
+// test 11
+document.querySelector(".testOption11 img:nth-child(4)").classList.add("correct");
+// test 12
+document.querySelector(".testOption12 img:nth-child(1)").classList.add("correct");
+// test 13
+document.querySelector(".testOption13 img:nth-child(4)").classList.add("correct");
+// test 14
+document.querySelector(".testOption14 img:nth-child(7)").classList.add("correct");
+// test 15
+document.querySelector(".testOption15 img:nth-child(2)").classList.add("correct");
+// test 16
+document.querySelector(".testOption16 img:nth-child(3)").classList.add("correct");
+// test 17
+document.querySelector(".testOption17 img:nth-child(1)").classList.add("correct");
+// test 18
+document.querySelector(".testOption18 img:nth-child(6)").classList.add("correct");
+// test 19
+document.querySelector(".testOption19 img:nth-child(5)").classList.add("correct");
+// test 20
+document.querySelector(".testOption20 img:nth-child(8)").classList.add("correct");
+// test 21
+document.querySelector(".testOption21 img:nth-child(4)").classList.add("correct");
+// test 22
+document.querySelector(".testOption22 img:nth-child(4)").classList.add("correct");
+// test 23
+document.querySelector(".testOption23 img:nth-child(7)").classList.add("correct");
+// test 24
+document.querySelector(".testOption24 img:nth-child(6)").classList.add("correct");
+// test 25
+document.querySelector(".testOption25 img:nth-child(4)").classList.add("correct");
+// test 26
+document.querySelector(".testOption26 img:nth-child(7)").classList.add("correct");
+// test 27
+document.querySelector(".testOption27 img:nth-child(7)").classList.add("correct");
+// test 28
+document.querySelector(".testOption28 img:nth-child(3)").classList.add("correct");
+// test 29
+document.querySelector(".testOption29 img:nth-child(2)").classList.add("correct");
+// test 30
+document.querySelector(".testOption30 img:nth-child(8)").classList.add("correct");
