@@ -2,3 +2,5 @@
 
 // select body
 let body = document.querySelector("body");
+
+// creat elements for result page
