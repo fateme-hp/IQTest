@@ -3,6 +3,7 @@
 // select body
 let body = document.querySelector("body");
 
+// creat elements for result page
 // create elements for the first stage
 
 // create a div with form id
