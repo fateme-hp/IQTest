@@ -1,0 +1,108 @@
+/* reset css */
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+  text-decoration: none;
+  color: inherit;
+  font-family: "Montserrat", sans-serif;
+}
+
+/* css style */
+body {
+  background-image: url("Images/bg.jpg");
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+/* first stage css style start */
+#formContainer {
+  margin: 10% auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #eee;
+  padding: 2.5%;
+  width: 350px;
+  height: 300px;
+  border-radius: 5px;
+}
+#formContainer h1{
+    font-weight: 600;
+    font-size: 25px;
+    margin-bottom: 20px;
+}
+#formContainer span{
+    font-size: 13px;
+    font-weight: bold;
+    color: #2d2d2d;
+}
+
+#form {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+ width: 100%;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+#form * {
+  margin-top: 15px;
+  text-align: left;
+}
+#form input[type="text"] {
+  width: 95%;
+  padding: 10px;
+  outline: none;
+  border: none;
+  background-color: transparent;
+  border-bottom: 2px solid rgb(139, 139, 139);
+  margin-bottom: 10px;
+}
+#submit {
+  padding: 8px 12px;
+  font-weight: bold;
+  border-radius: 3px;
+  background-color: #2d2d2d;
+  color: #fff;
+  border: none;
+}
+#submit:hover {
+  background-color: #1a73e8;
+}
+
+/* first stage css style end */
+
+/* second stage (test) css style start */
+.testContainer {
+  margin: 5% auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #eee;
+  padding: 2%;
+  border-radius: 5px;
+  width: 900px;
+  height:600px;
+}
+.testOptions{
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  width: 600px;
+  margin-top: 10px;
+  align-items: center;
+}
+.testOptions img {
+  border: 2px solid #2d2d2d;
+  margin:5px;
+  cursor: pointer;
+}
+
+.correct {
+  border: 5px solid red!important;
+}
+/* second stage (test) css style start */
