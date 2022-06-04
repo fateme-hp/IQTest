@@ -205,7 +205,24 @@ function submitName(e) {
   
 
 }
-// create a for loop and add event listener for click
+// create a loop and add event listener for click
 
+let testAnswer = document.querySelectorAll(".testOptions img");
+console.log(testAnswer);
 
+for (let i = 0; i < testAnswer.length; i++) {
+  testAnswer[i].addEventListener("click", next);
+  
+}
+let  container =document.querySelectorAll(".testContainer");
+console.log(container);
+for (let i = 1; i <= 30; i++) {
+  let nextContainer = container[i]
+//  nextContainer[i].style.display="flex";
+
+ console.log(nextContainer);
+}
+function next(){
+
+}
 
