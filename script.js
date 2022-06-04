@@ -226,9 +226,7 @@ function submitName(e) {
   
  testAnswer.forEach()
 // }
-// for (let i = 1; i <= 30; i++) {
-//  testAnswer.addEventListener('click', next);
-// function next(){
+
 
 // }
 
