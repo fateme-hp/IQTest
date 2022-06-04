@@ -201,34 +201,11 @@ function user(event){
 function submitName(e) {
   e.preventDefault()
   document.getElementById("formContainer").style.display="none";
- testContainer.setAttribute("style","display:flex") ;
+ document.querySelector(".container1").style.display="flex";
   
 
 }
 // create a for loop and add event listener for click
 
 
-// for (let i = 1; i <=30; i++) {
-//   document.getElementsByClassName("testOptions")[i].addEventListener('click', next)
-//   function next(nextTest){
-  
-//     if (testContainer.classList.contain(".Container"+[i])){
-//       document.querySelector(".Container"+[i]).style.display="block";
-//     }
-//     else{
-//       document.querySelector(".Container").style.display="none";
-//     }
-    
-  
-//   }
 
- let testAnswer = document.querySelectorAll(".testOptions");
-  
- testAnswer.forEach()
-// }
-
-
-// }
-
-// }
- 
