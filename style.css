@@ -102,4 +102,7 @@ body {
   cursor: pointer;
 }
 
+.correct {
+  border: 5px solid red!important;
+}
 /* second stage (test) css style start */
