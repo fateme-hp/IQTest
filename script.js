@@ -179,3 +179,32 @@ document.querySelector(".testOption28 img:nth-child(3)").classList.add("correct"
 document.querySelector(".testOption29 img:nth-child(2)").classList.add("correct");
 // test 30
 document.querySelector(".testOption30 img:nth-child(8)").classList.add("correct");
+
+
+// event listener 
+
+// add event listener to submit name 
+document.querySelector("#form").addEventListener('submit', submitName);
+// add variable to get submitted name
+let submittedName ;
+//add event listener to get name change
+document.querySelector("#name").addEventListener('change' , user);
+// Get submitted name when name input changes
+function user(event){
+ console.log(event.target.value);
+ submittedName = event.target.value;
+ localStorage.setItem("name" , submittedName );
+
+}
+// when form is submitted change display 
+function submitName(e) {
+  e.preventDefault()
+  document.getElementById("formContainer").style.display="none"; 
+}
+
+// create a for loop and add event listener for click
+
+// for (let i = 1; i <=30; i++) {
+ 
+  
+// }
