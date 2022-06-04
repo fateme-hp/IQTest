@@ -226,3 +226,59 @@ function next(){
 
 }
 
+
+
+
+
+///////////////////////////////
+
+
+// creat a div for result page
+
+// create a div with form id
+let resultPage = document.createElement("div");
+
+// set id for div
+resultPage.setAttribute("id", "result-page");
+
+// append child to body
+body.appendChild(resultPage);
+
+// create a form with form id
+let formTitleResultPage = document.createElement("h1");
+
+// append child to first stage
+resultPage.appendChild(formTitleResultPage);
+
+//append span
+formTitleResultPage.append("Your Final Score!");
+
+// create a form with form id
+let formResultPage = document.createElement("form");
+
+// set id for form
+formResultPage.setAttribute("id", "formResultPage");
+
+// append child to first stage
+resultPage.appendChild(formResultPage);
+
+// create a label for name
+let nameLabelRP = document.createElement("label");
+
+// set attribute for label
+nameLabelRP.setAttribute("for", "input");
+
+// append child to form
+form.appendChild(nameLabelRP);
+
+//append label
+nameLabelRP.append("Name: ");
+
+// // create an input for name
+// let userName = document.createElement("input");
+// // set attributes for input
+// userName.setAttribute("type", "text");
+// userName.setAttribute("id", "name");
+// userName.setAttribute("placeholder", " Your name . . .");
+// // append child to form
+// form.appendChild(userName);
