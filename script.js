@@ -254,28 +254,35 @@ let ChartJS = document.createElement("div");
 // Append Child To Body 
 body.appendChild(ChartJS);
 
-// Creat Canvas Tag 
-let canvas = document.createElement("canvas");
-//Set Id For Div
-canvas.setAttribute("id","chart");
-//Append Child to ChartJS
-ChartJS.appendChild(canvas);
-// select chart
-let chartBox = document.getElementById("chart").getContext("2d")
-chart1 = new Chart(chartBox,{
-  type:'bar',
-  data:{
-    labels:["Your score is below average","You are in the middle class of intelligence","Your IQ is above average","congratulation! You are part of the smart class","The world needs smart people like you","You are unique, you are a genius !!!"],
-    datasets:[{
-      label:'The result of your IQ test in 2022',
-      data:[90,109,119,129,144,150],
-      backgroundColor:["red","#00ff00","blue","yellow","argb(255,165,60,1)"],
-      borderColor:["#000","#000","#000","#000","#000","#000"],
-      borderWidth:1
-    }]
-  }
-})
+ه
 
+
+
+
+
+//////////////////////////////////////////////////////////////////
+// // Creat Canvas Tag 
+// let canvas = document.createElement("canvas");
+// //Set Id For Div
+// canvas.setAttribute("id","chart");
+// //Append Child to ChartJS
+// ChartJS.appendChild(canvas);
+// // select chart
+// let chartBox = document.getElementById("chart").getContext("2d")
+// chart1 = new Chart(chartBox,{
+//   type:'bar',
+//   data:{
+//     labels:["Your score is below average","You are in the middle class of intelligence","Your IQ is above average","congratulation! You are part of the smart class","The world needs smart people like you","You are unique, you are a genius !!!"],
+//     datasets:[{
+//       label:'The result of your IQ test in 2022',
+//       data:[90,109,119,129,144,150],
+//       backgroundColor:["red","#00ff00","blue","yellow","argb(255,165,60,1)"],
+//       borderColor:["#000","#000","#000","#000","#000","#000"],
+//       borderWidth:1
+//     }]
+//   }
+// })
+/////////////////////////////////////////////////////////////////////////////
 
 
 // // create a form with form id
