@@ -244,35 +244,64 @@ resultPage.setAttribute("id", "result-page");
 // append child to body
 body.appendChild(resultPage);
 
-// create a form with form id
-let formTitleResultPage = document.createElement("h1");
+// Creat a Div For Chart
+let ChartJS = document.createElement("div");
+// Append Child To Body 
+body.appendChild(ChartJS);
 
-// append child to first stage
-resultPage.appendChild(formTitleResultPage);
+// Creat Canvas Tag 
+let canvas = document.createElement("canvas");
+//Set Id For Div
+canvas.setAttribute("id","chart");
+//Append Child to ChartJS
+ChartJS.appendChild(canvas);
+// select chart
+let chartBox = document.getElementById("chart").getContext("2d")
+chart1 = new Chart(chartBox,{
+  type:'bar',
+  data:{
+    labels:["Your score is below average","You are in the middle class of intelligence","Your IQ is above average","congratulation! You are part of the smart class","The world needs smart people like you","You are unique, you are a genius !!!"],
+    datasets:[{
+      label:'The result of your IQ test in 2022',
+      data:[90,109,119,129,144,150],
+      backgroundColor:["red","#00ff00","blue","yellow","argb(255,165,60,1)"],
+      borderColor:["#000","#000","#000","#000","#000","#000"],
+      borderWidth:1
+    }]
+  }
+})
 
-//append span
-formTitleResultPage.append("Your Final Score!");
 
-// create a form with form id
-let formResultPage = document.createElement("form");
 
-// set id for form
-formResultPage.setAttribute("id", "formResultPage");
+// // create a form with form id
+// let formTitleResultPage = document.createElement("h1");
 
-// append child to first stage
-resultPage.appendChild(formResultPage);
+// // append child to first stage
+// resultPage.appendChild(formTitleResultPage);
 
-// create a label for name
-let nameLabelRP = document.createElement("label");
+// //append span
+// formTitleResultPage.append("Your Final Score!");
 
-// set attribute for label
-nameLabelRP.setAttribute("for", "input");
+// // create a form with form id
+// let formResultPage = document.createElement("form");
 
-// append child to form
-form.appendChild(nameLabelRP);
+// // set id for form
+// formResultPage.setAttribute("id", "formResultPage");
 
-//append label
-nameLabelRP.append("Name: ");
+// // append child to first stage
+// resultPage.appendChild(formResultPage);
+
+// // create a label for name
+// let nameLabelRP = document.createElement("label");
+
+// // set attribute for label
+// nameLabelRP.setAttribute("for", "input");
+
+// // append child to form
+// form.appendChild(nameLabelRP);
+
+// //append label
+// nameLabelRP.append("Name: ");
 
 // // create an input for name
 // let userName = document.createElement("input");
@@ -282,3 +311,7 @@ nameLabelRP.append("Name: ");
 // userName.setAttribute("placeholder", " Your name . . .");
 // // append child to form
 // form.appendChild(userName);
+
+
+// creat Chart By ChartJS 
+
