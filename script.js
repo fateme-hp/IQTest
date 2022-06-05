@@ -209,22 +209,27 @@ function submitName(e) {
 
 let testAnswer = document.querySelectorAll(".testOptions img");
 console.log(testAnswer);
-
+let output = []; // define an array for output
 for (let i = 0; i < testAnswer.length; i++) {
-  testAnswer[i].addEventListener("click", next);
+  testAnswer[i].addEventListener("click", check);
+  function check() {
+    // push element if clicked element has correct class 
+    if (testAnswer[i].classList.contains("correct")) {
+      output.push(testAnswer[i])
+    }
+    result = output.length;
+    score = 20 * result / 3;
+    console.log(score);
+    // scoreMessage.append("Dear" + submittedName +", you scored" + score)
+
+ let Container = testAnswer[i];
+ Container.parentElement.parentElement.style.display ="none";
+ let nextContainer = Container.parentElement.parentElement.nextElementSibling;
+ nextContainer.style.display = "flex"
+}
   
 }
-let  container =document.querySelectorAll(".testContainer");
-console.log(container);
-for (let i = 1; i <= 30; i++) {
-  let nextContainer = container[i]
-//  nextContainer[i].style.display="flex";
 
- console.log(nextContainer);
-}
-function next(){
-
-}
 
 
 
