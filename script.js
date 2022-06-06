@@ -121,7 +121,7 @@ for (let i = 1; i <= 30; i++) {
       // set attributes for img
       option.setAttribute(
         "src",
-        "images/" + [i] + "/" + [i] + "-" + [j] + ".png"
+        "/images/" + [i] + "/" + [i] + "-" + [j] + ".png"
       );
       //append child to test image
       testOptions.appendChild(option);
@@ -132,7 +132,7 @@ for (let i = 1; i <= 30; i++) {
       // set attributes for img
       option.setAttribute(
         "src",
-        "images/" + [i] + "/" + [i] + "-" + [j] + ".png"
+        "/images/" + [i] + "/" + [i] + "-" + [j] + ".png"
       );
       //append child to test image
       testOptions.appendChild(option);
