@@ -352,8 +352,10 @@ for (let i = 0; i < testAnswer.length; i++) {
   
   }
 }
-/////////////////////////////////////////////////////////////////////////////
+
+
 // creat timer
+
 // creat article and append to body
 let article = document.createElement("article");
 body.appendChild(article)
@@ -431,146 +433,11 @@ function secpass() {
         
     } else {
         
+      // when form is submitted change display
+      // function submitName(e) 
         clearInterval(countDown);
         
         countDiv.innerHTML = 'countdown done';
         
     }
   }
-
-
-// // Set the date we're counting down to
-// var countDownDate = new Date("Jan 5, 2024 15:37:25").getTime();
-
-// // Update the count down every 1 second
-// var x = setInterval(function() {
-
-//   // Get today's date and time
-//   var now = new Date().getTime();
-
-//   // Find the distance between now and the count down date
-//   var distance = countDownDate - now;
-
-//   // Time calculations for days, hours, minutes and seconds
-//   var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-//   var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-//   // Output the result in an element with id="demo"
-//   document.querySelectorAll(".demo").innerHTML = minutes + "m " + seconds + "s ";
-
-//   // If the count down is over, write some text
-//   if (distance < 0) {
-//     clearInterval(x);
-//     document.querySelectorAll(".demo").innerHTML = "EXPIRED";
-//   }
-// }, 1000);
-
-// ///////////////////////////////////////////////////////////
-// var interval;
-// var minutes = 1;
-// var seconds = 5;
-// window.onload = function() {
-//     countdown('countdown');
-// }
-
-// function countdown(element) {
-//     interval = setInterval(function() {
-//         var el = document.getElementById(element);
-//         if(seconds == 0) {
-//             if(minutes == 0) {
-//                 el.innerHTML = "countdown's over!";
-//                 alert("countdown's over!");
-//                 clearInterval(interval);
-//                 return;
-//               } else {
-//                 minutes--;
-//                 seconds = 60;
-//             }
-//         }
-//         if(minutes > 0) {
-//             var minute_text = minutes + (minutes > 1 ? ' minutes' : ' minute');
-//         } else {
-//             var minute_text = '';
-//         }
-//         var second_text = seconds > 1 ? 'seconds' : 'second';
-//         el.innerHTML = minute_text + '"" ' + seconds + '"" ' + second_text + "' remaining'";
-//         document.title = minute_text + ' ' + seconds + ' ' + second_text + ' remaining';
-//         seconds--;
-//     }, 1000);
-// }
-///////////////////////////////////////////////////////////
-
-// // Creat a Div For Chart
-// let ChartJS = document.createElement("div");
-// // Append Child To Body
-// body.appendChild(ChartJS);
-
-//////////////////////////////////////////////////////////////////
-// // Creat Canvas Tag
-// let canvas = document.createElement("canvas");
-// //Set Id For Div
-// canvas.setAttribute("id","chart");
-// //Append Child to ChartJS
-// ChartJS.appendChild(canvas);
-// // select chart
-// let chartBox = document.getElementById("chart").getContext("2d")
-// chart1 = new Chart(chartBox,{
-//   type:'bar',
-//   data:{
-//     labels:["Your score is below average","You are in the middle class of intelligence","Your IQ is above average","congratulation! You are part of the smart class","The world needs smart people like you","You are unique, you are a genius !!!"],
-//     datasets:[{
-//       label:'The result of your IQ test in 2022',
-//       data:[90,109,119,129,144,150],
-//       backgroundColor:["red","#00ff00","blue","yellow","argb(255,165,60,1)"],
-//       borderColor:["#000","#000","#000","#000","#000","#000"],
-//       borderWidth:1
-//     }]
-//   }
-// })
-
-
-
-
-
-/////////////////////////////////////////////////////////////////////////////
-
-// // create a form with form id
-// let formTitleResultPage = document.createElement("h1");
-
-// // append child to first stage
-// resultPage.appendChild(formTitleResultPage);
-
-// //append span
-// formTitleResultPage.append("Your Final Score!");
-
-// // create a form with form id
-// let formResultPage = document.createElement("form");
-
-// // set id for form
-// formResultPage.setAttribute("id", "formResultPage");
-
-// // append child to first stage
-// resultPage.appendChild(formResultPage);
-
-// // create a label for name
-// let nameLabelRP = document.createElement("label");
-
-// // set attribute for label
-// nameLabelRP.setAttribute("for", "input");
-
-// // append child to form
-// form.appendChild(nameLabelRP);
-
-// //append label
-// nameLabelRP.append("Name: ");
-
-// // create an input for name
-// let userName = document.createElement("input");
-// // set attributes for input
-// userName.setAttribute("type", "text");
-// userName.setAttribute("id", "name");
-// userName.setAttribute("placeholder", " Your name . . .");
-// // append child to form
-// form.appendChild(userName);
-
-// creat Chart By ChartJS
