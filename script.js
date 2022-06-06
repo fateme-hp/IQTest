@@ -305,23 +305,23 @@ function submitName(e) {
   document.getElementById("formContainer").style.display = "none";
   document.querySelector(".container1").style.display = "flex";
   //timer
-let sec = 1000;
-let time = setInterval(myTimer, 1000);
+  let sec = 600;
+  let time = setInterval(myTimer, 1000);
 
-function myTimer() {
-  let timer = document.getElementById('demo');
+  function myTimer() {
+    let timer = document.getElementById("demo");
     timer.innerHTML = sec + "sec left";
     sec--;
 
     for (let i = 0; i < 30; i++) {
-      testBox = document.querySelectorAll(".testContainer")
+      testBox = document.querySelectorAll(".testContainer");
       if (sec == -1) {
         clearInterval(time);
         testBox[i].style.display = "none";
-        resultPage.style.display = "flex"
+        resultPage.style.display = "flex";
+      }
     }
-    }
-}
+  }
 }
 // create a loop and add event listener for click
 // let calc = [];
@@ -331,46 +331,42 @@ let score;
 let output = []; // define an array for output
 for (let i = 0; i < testAnswer.length; i++) {
   testAnswer[i].addEventListener("click", check);
-  function check() {
-
-    let Container = testAnswer[i];
-    let nextContainer =
-      Container.parentElement.parentElement.nextElementSibling;
-  
-    Container.parentElement.parentElement.style.display = "none";
-    nextContainer.style.display = "flex";
-  
-    // push element if clicked element has correct class
-    if (testAnswer[i].classList.contains("correct")) {
-      output.push(testAnswer[i]);
-    }
-  
-    result =  output.length;
-    calc = 20 * result / 3;
-    score = Math.round(calc);
-  
-
-    if (score  <= 90) {
-      scoreMessage.append("Dear " + submittedName + ", you scored  " + score );
-    } else if (90 < score  <= 109) {
-      scoreMessage.append("Dear" + submittedName + ", you scored" + score );
-    } else if (109 < score  <= 119) {score
-      scoreMessage.append("Dear" + submittedName + ", you scored" + valueOfScore );
-    } else if (119 < score  <= 129) {
-      scoreMessage.append("Dear" + submittedName + ", you scored" + score );
-    } else if (129 < score  <= 144) {
-      scoreMessage.append("Dear" + submittedName + ", you scored" + score );
-    } else if (144 < score ) {
-      scoreMessage.append("Dear" + submittedName + ", you scored" + score );
-    }
-   
-     
-  
-  
-  
-  }
+  check(i);
 }
 
+function check(current) {
+
+    let Container = testAnswer[current].parentElement;
+    console.log(Container);
+    let nextContainer = Container.parentElement.nextElementSibling;
+    console.log(nextContainer);
+    Container.parentElement.style.display = "none";
+  nextContainer.style.display = "flex";
+ 
+  // push element if clicked element has correct class
+  if (testAnswer[current].classList.contains("correct")) {
+    output.push(testAnswer[current]);
+  }
+
+  result =  output.length;
+  calc = 20 * result / 3;
+  score = Math.round(calc);
+ 
+}
+
+if (score  <= 90) {
+  scoreMessage.append("Dear " + submittedName + ", you scored  " + score );
+} else if (90 < score  <= 109) {
+  scoreMessage.append("Dear" + submittedName + ", you scored" + score );
+} else if (109 < score  <= 119) {score
+  scoreMessage.append("Dear" + submittedName + ", you scored" + valueOfScore );
+} else if (119 < score  <= 129) {
+  scoreMessage.append("Dear" + submittedName + ", you scored" + score );
+} else if (129 < score  <= 144) {
+  scoreMessage.append("Dear" + submittedName + ", you scored" + score );
+} else if (144 < score ) {
+  scoreMessage.append("Dear" + submittedName + ", you scored" + score );
+}
 
 // creat timer
 
@@ -384,16 +380,12 @@ for (let i = 0; i < testAnswer.length; i++) {
 // let artDiv = document.createElement("div");
 // artDiv.classList.add("count");
 // article.appendChild(artDiv)
-// // creat a div for artDiv 
+// // creat a div for artDiv
 // let divDiv = document.createElement("div");
 // divDiv.setAttribute("id","timer");
 // artDiv.appendChild(divDiv)
 // let creattimer = document.createElement("h3");
 // article.appendChild(creattimer)
-
-
-
-
 
 // if (score >=1 && score<=170) {
 //   console.log("your good");
@@ -406,39 +398,39 @@ for (let i = 0; i < testAnswer.length; i++) {
 //     secpass,
 //     countDown   = setInterval(function () {
 //         'use strict';
-        
+
 //         secpass();
 //     }, 1000);
 
 // function secpass() {
 //     'use strict';
-    
+
 //     var min     = Math.floor(sec / 60),
 //         remSec  = sec % 60;
-    
+
 //     if (remSec < 10) {
-        
+
 //         remSec = '0' + remSec;
-    
+
 //     }
 //     if (min < 10) {
-        
+
 //         min = '0' + min;
-    
+
 //     }
 //     countDiv.innerHTML = min + ":" + remSec;
-    
+
 //     if (sec > 0) {
-        
+
 //         sec = sec - 1;
-        
+
 //     } else {
-        
+
 //       // when form is submitted change display
-//       // function submitName(e) 
+//       // function submitName(e)
 //         clearInterval(countDown);
-        
+
 //         countDiv.innerHTML = 'countdown done';
-        
+
 //     }
 //   }
