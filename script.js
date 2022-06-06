@@ -3,6 +3,14 @@
 // select body
 let body = document.querySelector("body");
 
+// creat a p for timer
+let p = document.createElement("p");
+// set att id ("demo")
+p.setAttribute("id","demo");
+// append
+body.appendChild(p);
+
+
 // creat elements for result page
 // create elements for the first stage
 
@@ -84,6 +92,9 @@ top.appendChild(topSpan);
 //append span
 topSpan.append( i +"/30")
 
+
+
+
   // create a div container for test img
   let testImage = document.createElement("div");
   // set class for div
@@ -132,6 +143,19 @@ topSpan.append( i +"/30")
     }
   }
 }
+
+// creat a div for result page
+
+// create a div with form id
+let resultPage = document.createElement("div");
+
+// set id for div
+resultPage.setAttribute("id", "result-page");
+
+// append child to body
+testSection.appendChild(resultPage);
+
+
 // adding class of correct to correct answers
 // test 1
 document
@@ -307,93 +331,98 @@ for (let i = 0; i < testAnswer.length; i++) {
 
 
 ///////////////////////////////
+//timer
+let sec = 15;
+let time = setInterval(myTimer, 1000);
 
-// creat a p for output result
-let p = document.createElement("p");
-// set att id ("demo")
-p.setAttribute("id","demo");
-// append
-body.appendChild(p);
-// Set the date we're counting down to
-var countDownDate = new Date("Jan 5, 2024 15:37:25").getTime();
-
-// Update the count down every 1 second
-var x = setInterval(function() {
-
-  // Get today's date and time
-  var now = new Date().getTime();
-    
-  // Find the distance between now and the count down date
-  var distance = countDownDate - now;
-    
-  // Time calculations for days, hours, minutes and seconds
-  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-    
-  // Output the result in an element with id="demo"
-  document.getElementById("demo").innerHTML = minutes + "m " + seconds + "s ";
-    
-  // If the count down is over, write some text 
-  if (distance < 0) {
-    clearInterval(x);
-    document.getElementById("demo").innerHTML = "EXPIRED";
-  }
-}, 1000);
-
-
-///////////////////////////////////////////////////////////
-var interval;
-var minutes = 1;
-var seconds = 5;
-window.onload = function() {
-    countdown('countdown');
+function myTimer() {
+  let timer = document.getElementById('demo');
+    timer.innerHTML = sec + "sec left";
+    sec--;
+  
+    for (let i = 0; i < 30; i++) {
+      testBox = document.querySelectorAll(".testContainer")
+      if (sec == -1) {
+        clearInterval(time);
+        testBox[i].style.display = "none";
+        resultPage.style.display = "flex"
+    }
+    }
 }
 
-function countdown(element) {
-    interval = setInterval(function() {
-        var el = document.getElementById(element);
-        if(seconds == 0) {
-            if(minutes == 0) {
-                el.innerHTML = "countdown's over!";  
-                alert("countdown's over!");
-                clearInterval(interval);
-                return;
-              } else {
-                minutes--;
-                seconds = 60;
-            }
-        }
-        if(minutes > 0) {
-            var minute_text = minutes + (minutes > 1 ? ' minutes' : ' minute');
-        } else {
-            var minute_text = '';
-        }
-        var second_text = seconds > 1 ? 'seconds' : 'second';
-        el.innerHTML = minute_text + '"" ' + seconds + '"" ' + second_text + "' remaining'";
-        document.title = minute_text + ' ' + seconds + ' ' + second_text + ' remaining';
-        seconds--;
-    }, 1000);
-}
+
+
+// // Set the date we're counting down to
+// var countDownDate = new Date("Jan 5, 2024 15:37:25").getTime();
+
+// // Update the count down every 1 second
+// var x = setInterval(function() {
+
+//   // Get today's date and time
+//   var now = new Date().getTime();
+    
+//   // Find the distance between now and the count down date
+//   var distance = countDownDate - now;
+    
+//   // Time calculations for days, hours, minutes and seconds
+//   var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+//   var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+    
+//   // Output the result in an element with id="demo"
+//   document.querySelectorAll(".demo").innerHTML = minutes + "m " + seconds + "s ";
+    
+//   // If the count down is over, write some text 
+//   if (distance < 0) {
+//     clearInterval(x);
+//     document.querySelectorAll(".demo").innerHTML = "EXPIRED";
+//   }
+// }, 1000);
+
+
+// ///////////////////////////////////////////////////////////
+// var interval;
+// var minutes = 1;
+// var seconds = 5;
+// window.onload = function() {
+//     countdown('countdown');
+// }
+
+// function countdown(element) {
+//     interval = setInterval(function() {
+//         var el = document.getElementById(element);
+//         if(seconds == 0) {
+//             if(minutes == 0) {
+//                 el.innerHTML = "countdown's over!";  
+//                 alert("countdown's over!");
+//                 clearInterval(interval);
+//                 return;
+//               } else {
+//                 minutes--;
+//                 seconds = 60;
+//             }
+//         }
+//         if(minutes > 0) {
+//             var minute_text = minutes + (minutes > 1 ? ' minutes' : ' minute');
+//         } else {
+//             var minute_text = '';
+//         }
+//         var second_text = seconds > 1 ? 'seconds' : 'second';
+//         el.innerHTML = minute_text + '"" ' + seconds + '"" ' + second_text + "' remaining'";
+//         document.title = minute_text + ' ' + seconds + ' ' + second_text + ' remaining';
+//         seconds--;
+//     }, 1000);
+// }
 ///////////////////////////////////////////////////////////
 
 
 
 
-// creat a div for result page
 
-// create a div with form id
-let resultPage = document.createElement("div");
 
-// set id for div
-resultPage.setAttribute("id", "result-page");
-
-// append child to body
-testSection.appendChild(resultPage);
-
-// Creat a Div For Chart
-let ChartJS = document.createElement("div");
-// Append Child To Body 
-body.appendChild(ChartJS);
+// // Creat a Div For Chart
+// let ChartJS = document.createElement("div");
+// // Append Child To Body 
+// body.appendChild(ChartJS);
 
 //////////////////////////////////////////////////////////////////
 // // Creat Canvas Tag
