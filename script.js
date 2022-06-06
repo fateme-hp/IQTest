@@ -56,7 +56,7 @@ formSpan.append("IQ test will start after submitting name.");
 
 // create elements for the second stage (test)
 
-// create section for test 
+// create section for test
 let testSection = document.createElement("section");
 // append child to body
 body.appendChild(testSection);
@@ -67,9 +67,22 @@ for (let i = 1; i <= 30; i++) {
   let testContainer = document.createElement("div");
   // set class for div
   testContainer.classList.add("testContainer");
-  testContainer.classList.add("container"+[i]);
+  testContainer.classList.add("container" + [i]);
   // append child to test section
   testSection.appendChild(testContainer);
+
+  //create a div container for containerTop
+  let top = document.createElement("div");
+   // set class for div
+   top.classList.add("top");
+  // append child to test container
+  testContainer.appendChild(top);
+//create span for top
+  let topSpan = document.createElement("span");
+// append child to first stage
+top.appendChild(topSpan);
+//append span
+topSpan.append( i +"/30")
 
   // create a div container for test img
   let testImage = document.createElement("div");
@@ -82,7 +95,7 @@ for (let i = 1; i <= 30; i++) {
   // create an image element
   let img = document.createElement("img");
   // set attributes for img
-    img.setAttribute("src" ,"images/"+[i]+"/test"+[i]+".png")  //----یادت باشه برگردونی !!!
+  img.setAttribute("src", "images/" + [i] + "/test" + [i] + ".png"); //----یادت باشه برگردونی !!!
   //append child to test image
   testImage.appendChild(img);
 
@@ -119,91 +132,147 @@ for (let i = 1; i <= 30; i++) {
     }
   }
 }
-// adding class of correct to correct answers 
+// adding class of correct to correct answers
 // test 1
-document.querySelector(".testOption1 img:nth-child(3)").classList.add("correct");
+document
+  .querySelector(".testOption1 img:nth-child(3)")
+  .classList.add("correct");
 // test 2
-document.querySelector(".testOption2 img:nth-child(1)").classList.add("correct");
+document
+  .querySelector(".testOption2 img:nth-child(1)")
+  .classList.add("correct");
 // test 3
-document.querySelector(".testOption3 img:nth-child(5)").classList.add("correct");
+document
+  .querySelector(".testOption3 img:nth-child(5)")
+  .classList.add("correct");
 // test 4
-document.querySelector(".testOption4 img:nth-child(5)").classList.add("correct");
+document
+  .querySelector(".testOption4 img:nth-child(5)")
+  .classList.add("correct");
 // test 5
-document.querySelector(".testOption5 img:nth-child(2)").classList.add("correct");
+document
+  .querySelector(".testOption5 img:nth-child(2)")
+  .classList.add("correct");
 // test 6
-document.querySelector(".testOption6 img:nth-child(1)").classList.add("correct");
+document
+  .querySelector(".testOption6 img:nth-child(1)")
+  .classList.add("correct");
 // test 7
-document.querySelector(".testOption7 img:nth-child(2)").classList.add("correct");
+document
+  .querySelector(".testOption7 img:nth-child(2)")
+  .classList.add("correct");
 // test 8
-document.querySelector(".testOption8 img:nth-child(2)").classList.add("correct");
+document
+  .querySelector(".testOption8 img:nth-child(2)")
+  .classList.add("correct");
 // test 9
-document.querySelector(".testOption9 img:nth-child(2)").classList.add("correct");
+document
+  .querySelector(".testOption9 img:nth-child(2)")
+  .classList.add("correct");
 // test 10
-document.querySelector(".testOption10 img:nth-child(6)").classList.add("correct");
+document
+  .querySelector(".testOption10 img:nth-child(6)")
+  .classList.add("correct");
 // test 11
-document.querySelector(".testOption11 img:nth-child(4)").classList.add("correct");
+document
+  .querySelector(".testOption11 img:nth-child(4)")
+  .classList.add("correct");
 // test 12
-document.querySelector(".testOption12 img:nth-child(1)").classList.add("correct");
+document
+  .querySelector(".testOption12 img:nth-child(1)")
+  .classList.add("correct");
 // test 13
-document.querySelector(".testOption13 img:nth-child(4)").classList.add("correct");
+document
+  .querySelector(".testOption13 img:nth-child(4)")
+  .classList.add("correct");
 // test 14
-document.querySelector(".testOption14 img:nth-child(7)").classList.add("correct");
+document
+  .querySelector(".testOption14 img:nth-child(7)")
+  .classList.add("correct");
 // test 15
-document.querySelector(".testOption15 img:nth-child(2)").classList.add("correct");
+document
+  .querySelector(".testOption15 img:nth-child(2)")
+  .classList.add("correct");
 // test 16
-document.querySelector(".testOption16 img:nth-child(3)").classList.add("correct");
+document
+  .querySelector(".testOption16 img:nth-child(3)")
+  .classList.add("correct");
 // test 17
-document.querySelector(".testOption17 img:nth-child(1)").classList.add("correct");
+document
+  .querySelector(".testOption17 img:nth-child(1)")
+  .classList.add("correct");
 // test 18
-document.querySelector(".testOption18 img:nth-child(6)").classList.add("correct");
+document
+  .querySelector(".testOption18 img:nth-child(6)")
+  .classList.add("correct");
 // test 19
-document.querySelector(".testOption19 img:nth-child(5)").classList.add("correct");
+document
+  .querySelector(".testOption19 img:nth-child(5)")
+  .classList.add("correct");
 // test 20
-document.querySelector(".testOption20 img:nth-child(8)").classList.add("correct");
+document
+  .querySelector(".testOption20 img:nth-child(8)")
+  .classList.add("correct");
 // test 21
-document.querySelector(".testOption21 img:nth-child(4)").classList.add("correct");
+document
+  .querySelector(".testOption21 img:nth-child(4)")
+  .classList.add("correct");
 // test 22
-document.querySelector(".testOption22 img:nth-child(4)").classList.add("correct");
+document
+  .querySelector(".testOption22 img:nth-child(4)")
+  .classList.add("correct");
 // test 23
-document.querySelector(".testOption23 img:nth-child(7)").classList.add("correct");
+document
+  .querySelector(".testOption23 img:nth-child(7)")
+  .classList.add("correct");
 // test 24
-document.querySelector(".testOption24 img:nth-child(6)").classList.add("correct");
+document
+  .querySelector(".testOption24 img:nth-child(6)")
+  .classList.add("correct");
 // test 25
-document.querySelector(".testOption25 img:nth-child(4)").classList.add("correct");
+document
+  .querySelector(".testOption25 img:nth-child(4)")
+  .classList.add("correct");
 // test 26
-document.querySelector(".testOption26 img:nth-child(7)").classList.add("correct");
+document
+  .querySelector(".testOption26 img:nth-child(7)")
+  .classList.add("correct");
 // test 27
-document.querySelector(".testOption27 img:nth-child(7)").classList.add("correct");
+document
+  .querySelector(".testOption27 img:nth-child(7)")
+  .classList.add("correct");
 // test 28
-document.querySelector(".testOption28 img:nth-child(3)").classList.add("correct");
+document
+  .querySelector(".testOption28 img:nth-child(3)")
+  .classList.add("correct");
 // test 29
-document.querySelector(".testOption29 img:nth-child(2)").classList.add("correct");
+document
+  .querySelector(".testOption29 img:nth-child(2)")
+  .classList.add("correct");
 // test 30
-document.querySelector(".testOption30 img:nth-child(8)").classList.add("correct");
+document
+  .querySelector(".testOption30 img:nth-child(8)")
+  .classList.add("correct");
 
+// event listener
 
-// event listener 
-
-// add event listener to submit name 
-document.querySelector("#form").addEventListener('submit', submitName);
+// add event listener to submit name
+document.querySelector("#form").addEventListener("submit", submitName);
 // add variable to get submitted name
-let submittedName ;
+let submittedName;
 //add event listener to get name change
-document.querySelector("#name").addEventListener('change' , user);
+document.querySelector("#name").addEventListener("change", user);
 // Get submitted name when name input changes
-function user(event){
- console.log(event.target.value);
- submittedName = event.target.value;
- localStorage.setItem("name" , submittedName );
-
+function user(event) {
+  console.log(event.target.value);
+  submittedName = event.target.value;
+  localStorage.setItem("name", submittedName);
 }
-// when form is submitted change display 
+// when form is submitted change display
 function submitName(e) {
-  e.preventDefault()
-  document.getElementById("formContainer").style.display="none";
- document.querySelector(".container1").style.display="flex";
-  
-
+  e.preventDefault();
+  document.getElementById("formContainer").style.display = "none";
+  document.querySelector(".container1").style.display = "flex";
 }
 // create a loop and add event listener for click
 
@@ -213,30 +282,25 @@ let output = []; // define an array for output
 for (let i = 0; i < testAnswer.length; i++) {
   testAnswer[i].addEventListener("click", check);
   function check() {
-    // push element if clicked element has correct class 
+    // push element if clicked element has correct class
     if (testAnswer[i].classList.contains("correct")) {
-      output.push(testAnswer[i])
+      output.push(testAnswer[i]);
     }
     result = output.length;
-    score = 20 * result / 3;
+    score = (20 * result) / 3;
     console.log(score);
     // scoreMessage.append("Dear" + submittedName +", you scored" + score)
 
- let Container = testAnswer[i];
- Container.parentElement.parentElement.style.display ="none";
- let nextContainer = Container.parentElement.parentElement.nextElementSibling;
- nextContainer.style.display = "flex"
+    let Container = testAnswer[i];
+    let nextContainer = Container.parentElement.parentElement.nextElementSibling;
+   
+      Container.parentElement.parentElement.style.display = "none"
+      nextContainer.style.display = "flex";
+    
+  }
 }
-  
-}
-
-
-
-
-
 
 ///////////////////////////////
-
 
 // creat a div for result page
 
@@ -247,21 +311,17 @@ let resultPage = document.createElement("div");
 resultPage.setAttribute("id", "result-page");
 
 // append child to body
-body.appendChild(resultPage);
+testSection.appendChild(resultPage);
 
 // Creat a Div For Chart
 let ChartJS = document.createElement("div");
-// Append Child To Body 
-body.appendChild(ChartJS);
-
-ه
-
-
+// Append Child To Body
+testSection.appendChild(ChartJS);
 
 
 
 //////////////////////////////////////////////////////////////////
-// // Creat Canvas Tag 
+// // Creat Canvas Tag
 // let canvas = document.createElement("canvas");
 // //Set Id For Div
 // canvas.setAttribute("id","chart");
@@ -283,7 +343,6 @@ body.appendChild(ChartJS);
 //   }
 // })
 /////////////////////////////////////////////////////////////////////////////
-
 
 // // create a form with form id
 // let formTitleResultPage = document.createElement("h1");
@@ -324,6 +383,4 @@ body.appendChild(ChartJS);
 // // append child to form
 // form.appendChild(userName);
 
-
-// creat Chart By ChartJS 
-
+// creat Chart By ChartJS
