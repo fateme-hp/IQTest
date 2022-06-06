@@ -352,6 +352,24 @@ for (let i = 0; i < testAnswer.length; i++) {
   
   }
 }
+/////////////////////////////////////////////////////////////////////////////
+// creat timer
+// creat article and append to body
+let article = document.createElement("article");
+body.appendChild(article)
+// add class and id for article
+article.classList.add("clock");
+article.setAttribute("id","model3");
+// crear a div for article and add class and add id and append to article
+let artDiv = document.createElement("div");
+artDiv.classList.add("count");
+article.appendChild(artDiv)
+// creat a div for artDiv 
+let divDiv = document.createElement("div");
+divDiv.setAttribute("id","timer");
+artDiv.appendChild(divDiv)
+let creattimer = document.createElement("h3");
+article.appendChild(creattimer)
 
 
 
@@ -377,9 +395,49 @@ function myTimer() {
       clearInterval(time);
       testBox[i].style.display = "none";
       resultPage.style.display = "flex";
+var h3 = document.getElementsByTagName("h3");
+h3[0].innerHTML = "Countdown Timer With JS";
+
+var sec         = 1800,
+    countDiv    = document.getElementById("timer"),
+    secpass,
+    countDown   = setInterval(function () {
+        'use strict';
+        
+        secpass();
+    }, 1000);
+
+function secpass() {
+    'use strict';
+    
+    var min     = Math.floor(sec / 60),
+        remSec  = sec % 60;
+    
+    if (remSec < 10) {
+        
+        remSec = '0' + remSec;
+    
+    }
+    if (min < 10) {
+        
+        min = '0' + min;
+    
+    }
+    countDiv.innerHTML = min + ":" + remSec;
+    
+    if (sec > 0) {
+        
+        sec = sec - 1;
+        
+    } else {
+        
+        clearInterval(countDown);
+        
+        countDiv.innerHTML = 'countdown done';
+        
     }
   }
-}
+
 
 // // Set the date we're counting down to
 // var countDownDate = new Date("Jan 5, 2024 15:37:25").getTime();
@@ -469,6 +527,11 @@ function myTimer() {
 //     }]
 //   }
 // })
+
+
+
+
+
 /////////////////////////////////////////////////////////////////////////////
 
 // // create a form with form id
