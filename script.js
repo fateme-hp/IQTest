@@ -389,7 +389,7 @@ let time = setInterval(myTimer, 1000);
 function myTimer() {
   let timer = document.getElementById("demo");
   timer.innerHTML = sec + "sec left";
-  sec--;
+  sec--;}
 
   for (let i = 0; i < 30; i++) {
     testBox = document.querySelectorAll(".testContainer");
@@ -399,8 +399,9 @@ function myTimer() {
       resultPage.style.display = "flex";
 var h3 = document.getElementsByTagName("h3");
 h3[0].innerHTML = "Countdown Timer With JS";
-
-var sec         = 1800,
+    }
+  }
+//var sec = 1800,
     countDiv    = document.getElementById("timer"),
     secpass,
     countDown   = setInterval(function () {
