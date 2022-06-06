@@ -304,6 +304,24 @@ function submitName(e) {
   e.preventDefault();
   document.getElementById("formContainer").style.display = "none";
   document.querySelector(".container1").style.display = "flex";
+  //timer
+let sec = 1000;
+let time = setInterval(myTimer, 1000);
+
+function myTimer() {
+  let timer = document.getElementById('demo');
+    timer.innerHTML = sec + "sec left";
+    sec--;
+
+    for (let i = 0; i < 30; i++) {
+      testBox = document.querySelectorAll(".testContainer")
+      if (sec == -1) {
+        clearInterval(time);
+        testBox[i].style.display = "none";
+        resultPage.style.display = "flex"
+    }
+    }
+}
 }
 // create a loop and add event listener for click
 // let calc = [];
@@ -356,22 +374,22 @@ for (let i = 0; i < testAnswer.length; i++) {
 
 // creat timer
 
-// creat article and append to body
-let article = document.createElement("article");
-body.appendChild(article)
-// add class and id for article
-article.classList.add("clock");
-article.setAttribute("id","model3");
-// crear a div for article and add class and add id and append to article
-let artDiv = document.createElement("div");
-artDiv.classList.add("count");
-article.appendChild(artDiv)
-// creat a div for artDiv 
-let divDiv = document.createElement("div");
-divDiv.setAttribute("id","timer");
-artDiv.appendChild(divDiv)
-let creattimer = document.createElement("h3");
-article.appendChild(creattimer)
+// // creat article and append to body
+// let article = document.createElement("article");
+// body.appendChild(article)
+// // add class and id for article
+// article.classList.add("clock");
+// article.setAttribute("id","model3");
+// // crear a div for article and add class and add id and append to article
+// let artDiv = document.createElement("div");
+// artDiv.classList.add("count");
+// article.appendChild(artDiv)
+// // creat a div for artDiv 
+// let divDiv = document.createElement("div");
+// divDiv.setAttribute("id","timer");
+// artDiv.appendChild(divDiv)
+// let creattimer = document.createElement("h3");
+// article.appendChild(creattimer)
 
 
 
@@ -382,63 +400,45 @@ article.appendChild(creattimer)
 // }
 
 ///////////////////////////////
-//timer
-let sec = 15;
-let time = setInterval(myTimer, 1000);
 
-function myTimer() {
-  let timer = document.getElementById("demo");
-  timer.innerHTML = sec + "sec left";
-  sec--;}
+// //var sec = 1800,
+//     countDiv    = document.getElementById("timer"),
+//     secpass,
+//     countDown   = setInterval(function () {
+//         'use strict';
+        
+//         secpass();
+//     }, 1000);
 
-  for (let i = 0; i < 30; i++) {
-    testBox = document.querySelectorAll(".testContainer");
-    if (sec == -1) {
-      clearInterval(time);
-      testBox[i].style.display = "none";
-      resultPage.style.display = "flex";
-var h3 = document.getElementsByTagName("h3");
-h3[0].innerHTML = "Countdown Timer With JS";
-    }
-  }
-//var sec = 1800,
-    countDiv    = document.getElementById("timer"),
-    secpass,
-    countDown   = setInterval(function () {
-        'use strict';
-        
-        secpass();
-    }, 1000);
-
-function secpass() {
-    'use strict';
+// function secpass() {
+//     'use strict';
     
-    var min     = Math.floor(sec / 60),
-        remSec  = sec % 60;
+//     var min     = Math.floor(sec / 60),
+//         remSec  = sec % 60;
     
-    if (remSec < 10) {
+//     if (remSec < 10) {
         
-        remSec = '0' + remSec;
+//         remSec = '0' + remSec;
     
-    }
-    if (min < 10) {
+//     }
+//     if (min < 10) {
         
-        min = '0' + min;
+//         min = '0' + min;
     
-    }
-    countDiv.innerHTML = min + ":" + remSec;
+//     }
+//     countDiv.innerHTML = min + ":" + remSec;
     
-    if (sec > 0) {
+//     if (sec > 0) {
         
-        sec = sec - 1;
+//         sec = sec - 1;
         
-    } else {
+//     } else {
         
-      // when form is submitted change display
-      // function submitName(e) 
-        clearInterval(countDown);
+//       // when form is submitted change display
+//       // function submitName(e) 
+//         clearInterval(countDown);
         
-        countDiv.innerHTML = 'countdown done';
+//         countDiv.innerHTML = 'countdown done';
         
-    }
-  }
+//     }
+//   }
