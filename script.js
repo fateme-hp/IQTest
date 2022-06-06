@@ -6,10 +6,9 @@ let body = document.querySelector("body");
 // creat a p for timer
 let p = document.createElement("p");
 // set att id ("demo")
-p.setAttribute("id","demo");
+p.setAttribute("id", "demo");
 // append
 body.appendChild(p);
-
 
 // creat elements for result page
 // create elements for the first stage
@@ -81,19 +80,16 @@ for (let i = 1; i <= 30; i++) {
 
   //create a div container for containerTop
   let top = document.createElement("div");
-   // set class for div
-   top.classList.add("top");
+  // set class for div
+  top.classList.add("top");
   // append child to test container
   testContainer.appendChild(top);
-//create span for top
+  //create span for top
   let topSpan = document.createElement("span");
-// append child to first stage
-top.appendChild(topSpan);
-//append span
-topSpan.append( i +"/30")
-
-
-
+  // append child to first stage
+  top.appendChild(topSpan);
+  //append span
+  topSpan.append(i + "/30");
 
   // create a div container for test img
   let testImage = document.createElement("div");
@@ -155,6 +151,17 @@ resultPage.setAttribute("id", "result-page");
 // append child to body
 testSection.appendChild(resultPage);
 
+// create a h2 with form id
+let formTitleResultPage = document.createElement("h2");
+
+// append child to first stage
+resultPage.appendChild(formTitleResultPage);
+
+//append h2
+formTitleResultPage.append("Your Final Score!");
+
+let scoreMessage = document.createElement("span");
+resultPage.appendChild(scoreMessage);
 
 // adding class of correct to correct answers
 // test 1
@@ -299,36 +306,60 @@ function submitName(e) {
   document.querySelector(".container1").style.display = "flex";
 }
 // create a loop and add event listener for click
-
+// let calc = [];
 let testAnswer = document.querySelectorAll(".testOptions img");
 console.log(testAnswer);
+let score;
 let output = []; // define an array for output
 for (let i = 0; i < testAnswer.length; i++) {
   testAnswer[i].addEventListener("click", check);
   function check() {
+
+    let Container = testAnswer[i];
+    let nextContainer =
+      Container.parentElement.parentElement.nextElementSibling;
+  
+    Container.parentElement.parentElement.style.display = "none";
+    nextContainer.style.display = "flex";
+  
     // push element if clicked element has correct class
     if (testAnswer[i].classList.contains("correct")) {
       output.push(testAnswer[i]);
     }
-    result = output.length;
-    score = (20 * result) / 3;
-    console.log(score);
-    // scoreMessage.append("Dear" + submittedName +", you scored" + score)
+  
+    result =  output.length;
+    calc = 20 * result / 3;
+    score = Math.round(calc);
+  
 
-    let Container = testAnswer[i];
-    let nextContainer = Container.parentElement.parentElement.nextElementSibling;
+    if (score  <= 90) {
+      scoreMessage.append("Dear " + submittedName + ", you scored  " + score );
+    } else if (90 < score  <= 109) {
+      scoreMessage.append("Dear" + submittedName + ", you scored" + score );
+    } else if (109 < score  <= 119) {score
+      scoreMessage.append("Dear" + submittedName + ", you scored" + valueOfScore );
+    } else if (119 < score  <= 129) {
+      scoreMessage.append("Dear" + submittedName + ", you scored" + score );
+    } else if (129 < score  <= 144) {
+      scoreMessage.append("Dear" + submittedName + ", you scored" + score );
+    } else if (144 < score ) {
+      scoreMessage.append("Dear" + submittedName + ", you scored" + score );
+    }
    
-      Container.parentElement.parentElement.style.display = "none"
-      nextContainer.style.display = "flex";
-    
+     
+  
+  
+  
   }
 }
 
+
+
+
+
 // if (score >=1 && score<=170) {
 //   console.log("your good");
-// }                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                
-
-
+// }
 
 ///////////////////////////////
 //timer
@@ -336,21 +367,19 @@ let sec = 15;
 let time = setInterval(myTimer, 1000);
 
 function myTimer() {
-  let timer = document.getElementById('demo');
-    timer.innerHTML = sec + "sec left";
-    sec--;
-  
-    for (let i = 0; i < 30; i++) {
-      testBox = document.querySelectorAll(".testContainer")
-      if (sec == -1) {
-        clearInterval(time);
-        testBox[i].style.display = "none";
-        resultPage.style.display = "flex"
+  let timer = document.getElementById("demo");
+  timer.innerHTML = sec + "sec left";
+  sec--;
+
+  for (let i = 0; i < 30; i++) {
+    testBox = document.querySelectorAll(".testContainer");
+    if (sec == -1) {
+      clearInterval(time);
+      testBox[i].style.display = "none";
+      resultPage.style.display = "flex";
     }
-    }
+  }
 }
-
-
 
 // // Set the date we're counting down to
 // var countDownDate = new Date("Jan 5, 2024 15:37:25").getTime();
@@ -360,24 +389,23 @@ function myTimer() {
 
 //   // Get today's date and time
 //   var now = new Date().getTime();
-    
+
 //   // Find the distance between now and the count down date
 //   var distance = countDownDate - now;
-    
+
 //   // Time calculations for days, hours, minutes and seconds
 //   var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
 //   var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-    
+
 //   // Output the result in an element with id="demo"
 //   document.querySelectorAll(".demo").innerHTML = minutes + "m " + seconds + "s ";
-    
-//   // If the count down is over, write some text 
+
+//   // If the count down is over, write some text
 //   if (distance < 0) {
 //     clearInterval(x);
 //     document.querySelectorAll(".demo").innerHTML = "EXPIRED";
 //   }
 // }, 1000);
-
 
 // ///////////////////////////////////////////////////////////
 // var interval;
@@ -392,7 +420,7 @@ function myTimer() {
 //         var el = document.getElementById(element);
 //         if(seconds == 0) {
 //             if(minutes == 0) {
-//                 el.innerHTML = "countdown's over!";  
+//                 el.innerHTML = "countdown's over!";
 //                 alert("countdown's over!");
 //                 clearInterval(interval);
 //                 return;
@@ -414,14 +442,9 @@ function myTimer() {
 // }
 ///////////////////////////////////////////////////////////
 
-
-
-
-
-
 // // Creat a Div For Chart
 // let ChartJS = document.createElement("div");
-// // Append Child To Body 
+// // Append Child To Body
 // body.appendChild(ChartJS);
 
 //////////////////////////////////////////////////////////////////
