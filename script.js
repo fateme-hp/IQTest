@@ -323,129 +323,73 @@ for (let i = 0; i < testAnswer.length; i++) {
     
   }
 }
+/////////////////////////////////////////////////////////////////////////////
+// creat timer
+// creat article and append to body
+let article = document.createElement("article");
+body.appendChild(article)
+// add class and id for article
+article.classList.add("clock");
+article.setAttribute("id","model3");
+// crear a div for article and add class and add id and append to article
+let artDiv = document.createElement("div");
+artDiv.classList.add("count");
+article.appendChild(artDiv)
+// creat a div for artDiv 
+let divDiv = document.createElement("div");
+divDiv.setAttribute("id","timer");
+artDiv.appendChild(divDiv)
+let creattimer = document.createElement("h3");
+article.appendChild(creattimer)
 
-// if (score >=1 && score<=170) {
-//   console.log("your good");
-// }                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                
+var h3 = document.getElementsByTagName("h3");
+h3[0].innerHTML = "Countdown Timer With JS";
 
+var sec         = 1800,
+    countDiv    = document.getElementById("timer"),
+    secpass,
+    countDown   = setInterval(function () {
+        'use strict';
+        
+        secpass();
+    }, 1000);
 
-
-///////////////////////////////
-//timer
-let sec = 15;
-let time = setInterval(myTimer, 1000);
-
-function myTimer() {
-  let timer = document.getElementById('demo');
-    timer.innerHTML = sec + "sec left";
-    sec--;
-  
-    for (let i = 0; i < 30; i++) {
-      testBox = document.querySelectorAll(".testContainer")
-      if (sec == -1) {
-        clearInterval(time);
-        testBox[i].style.display = "none";
-        resultPage.style.display = "flex"
+function secpass() {
+    'use strict';
+    
+    var min     = Math.floor(sec / 60),
+        remSec  = sec % 60;
+    
+    if (remSec < 10) {
+        
+        remSec = '0' + remSec;
+    
     }
+    if (min < 10) {
+        
+        min = '0' + min;
+    
+    }
+    countDiv.innerHTML = min + ":" + remSec;
+    
+    if (sec > 0) {
+        
+        sec = sec - 1;
+        
+    } else {
+        
+        clearInterval(countDown);
+        
+        countDiv.innerHTML = 'countdown done';
+        
     }
 }
 
 
 
-// // Set the date we're counting down to
-// var countDownDate = new Date("Jan 5, 2024 15:37:25").getTime();
-
-// // Update the count down every 1 second
-// var x = setInterval(function() {
-
-//   // Get today's date and time
-//   var now = new Date().getTime();
-    
-//   // Find the distance between now and the count down date
-//   var distance = countDownDate - now;
-    
-//   // Time calculations for days, hours, minutes and seconds
-//   var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-//   var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-    
-//   // Output the result in an element with id="demo"
-//   document.querySelectorAll(".demo").innerHTML = minutes + "m " + seconds + "s ";
-    
-//   // If the count down is over, write some text 
-//   if (distance < 0) {
-//     clearInterval(x);
-//     document.querySelectorAll(".demo").innerHTML = "EXPIRED";
-//   }
-// }, 1000);
-
-
-// ///////////////////////////////////////////////////////////
-// var interval;
-// var minutes = 1;
-// var seconds = 5;
-// window.onload = function() {
-//     countdown('countdown');
-// }
-
-// function countdown(element) {
-//     interval = setInterval(function() {
-//         var el = document.getElementById(element);
-//         if(seconds == 0) {
-//             if(minutes == 0) {
-//                 el.innerHTML = "countdown's over!";  
-//                 alert("countdown's over!");
-//                 clearInterval(interval);
-//                 return;
-//               } else {
-//                 minutes--;
-//                 seconds = 60;
-//             }
-//         }
-//         if(minutes > 0) {
-//             var minute_text = minutes + (minutes > 1 ? ' minutes' : ' minute');
-//         } else {
-//             var minute_text = '';
-//         }
-//         var second_text = seconds > 1 ? 'seconds' : 'second';
-//         el.innerHTML = minute_text + '"" ' + seconds + '"" ' + second_text + "' remaining'";
-//         document.title = minute_text + ' ' + seconds + ' ' + second_text + ' remaining';
-//         seconds--;
-//     }, 1000);
-// }
-///////////////////////////////////////////////////////////
 
 
 
-
-
-
-// // Creat a Div For Chart
-// let ChartJS = document.createElement("div");
-// // Append Child To Body 
-// body.appendChild(ChartJS);
-
-//////////////////////////////////////////////////////////////////
-// // Creat Canvas Tag
-// let canvas = document.createElement("canvas");
-// //Set Id For Div
-// canvas.setAttribute("id","chart");
-// //Append Child to ChartJS
-// ChartJS.appendChild(canvas);
-// // select chart
-// let chartBox = document.getElementById("chart").getContext("2d")
-// chart1 = new Chart(chartBox,{
-//   type:'bar',
-//   data:{
-//     labels:["Your score is below average","You are in the middle class of intelligence","Your IQ is above average","congratulation! You are part of the smart class","The world needs smart people like you","You are unique, you are a genius !!!"],
-//     datasets:[{
-//       label:'The result of your IQ test in 2022',
-//       data:[90,109,119,129,144,150],
-//       backgroundColor:["red","#00ff00","blue","yellow","argb(255,165,60,1)"],
-//       borderColor:["#000","#000","#000","#000","#000","#000"],
-//       borderWidth:1
-//     }]
-//   }
-// })
 /////////////////////////////////////////////////////////////////////////////
 
 // // create a form with form id
