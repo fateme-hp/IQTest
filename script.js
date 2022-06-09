@@ -102,7 +102,7 @@ for (let i = 1; i <= 30; i++) {
   // create an image element
   let img = document.createElement("img");
   // set attributes for img
-  img.setAttribute("src", "images/" + [i] + "/test" + [i] + ".png"); //----یادت باشه برگردونی !!!
+  img.setAttribute("src", "Images/" + [i] + "/test" + [i] + ".png"); //----یادت باشه برگردونی !!!
   //append child to test image
   testImage.appendChild(img);
 
@@ -121,7 +121,7 @@ for (let i = 1; i <= 30; i++) {
       // set attributes for img
       option.setAttribute(
         "src",
-        "images/" + [i] + "/" + [i] + "-" + [j] + ".png"
+        "Images/" + [i] + "/" + [i] + "-" + [j] + ".png"
       );
       //append child to test image
       testOptions.appendChild(option);
@@ -132,7 +132,7 @@ for (let i = 1; i <= 30; i++) {
       // set attributes for img
       option.setAttribute(
         "src",
-        "images/" + [i] + "/" + [i] + "-" + [j] + ".png"
+        "Images/" + [i] + "/" + [i] + "-" + [j] + ".png"
       );
       //append child to test image
       testOptions.appendChild(option);
@@ -371,7 +371,7 @@ function check(clickedItem) {
     score = Math.round(calc);
     scoreMessage.append("Dear " + submittedName + ", you scored  " + score+",  " );
       // set attributes for img
-      resultImage.setAttribute( "src","images/brain.webp");
+      resultImage.setAttribute( "src","Images/brain.webp");
     if (score  <= 90) {
       scoreMessage.append("Your IQ score is lower than average!");
       } else if (90 < score  <= 109) {
