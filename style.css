@@ -122,9 +122,6 @@ body {
   cursor: pointer;
 }
 
-.correct {
-  /* border: 5px solid red!important; */
-}
 /* second stage (test) css style start */
 
 #result-page{
@@ -147,27 +144,4 @@ body {
   text-align: center;
   margin-top: 20px;
   font-size: 20px;
-}
-article {
-  width: 300px;
-  text-align: center;
-  background-color: #68b04d;
-  border-radius: 10px;
-  margin: 50px auto 20px;
-  padding: 5px;
-  overflow: hidden;
-  box-shadow: 3px 3px 10px #ccc;
-}
-article h3 {
-  padding: 10px;
-  color: #fff;
-}
-article .count {
-  padding: 5px;
-}
-article #timer{
-  padding: 5px;
-  color: crimson;
-  background-color: aliceblue;
-  border-radius: 2px;
 }

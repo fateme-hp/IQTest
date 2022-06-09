@@ -319,7 +319,7 @@ function submitName(e) {
         clearInterval(time);
         testBox[i].style.display = "none";
         resultPage.style.display = "flex";
-      }
+      }      
     }
   }
 }
@@ -330,107 +330,58 @@ console.log(testAnswer);
 let score;
 let output = []; // define an array for output
 for (let i = 0; i < testAnswer.length; i++) {
-  testAnswer[i].addEventListener("click", check);
-  check(i);
-}
-
-function check(current) {
-
-    let Container = testAnswer[current].parentElement;
-    console.log(Container);
+  testAnswer[i].addEventListener("click", next);
+  function next() {
+    let Container = testAnswer[i].parentElement;
     let nextContainer = Container.parentElement.nextElementSibling;
-    console.log(nextContainer);
     Container.parentElement.style.display = "none";
-  nextContainer.style.display = "flex";
+    nextContainer.style.display = "flex";
+  }
+}
+let correctAnswer = document.querySelectorAll(".correct");
+let correctArray = Array.from(correctAnswer)
+console.log(correctArray);
+
+testAnswer.forEach(function (img) {
+  clickedItem = img.addEventListener("click", check);
+  console.log(clickedItem);
+});
+// clickedItem;
+ matchingAnswer= [];
+ let result;
+function check(clickedItem) {
+
+  output.push(clickedItem.srcElement);
+  
+  
+  matchingAnswer = correctArray.filter(e => output.includes(e) );
+  console.log(matchingAnswer);
+
  
-  // push element if clicked element has correct class
-  if (testAnswer[current].classList.contains("correct")) {
-    output.push(testAnswer[current]);
+  localStorage.setItem("result" , matchingAnswer.length);
+
+  if (resultPage.style.display =="flex"){
+    p.style.display = "none";
+    result =localStorage.getItem("result");
+    submittedName = localStorage.getItem("name")
+    calc = 20 * result / 3;
+    score = Math.round(calc);
+    scoreMessage.append("Dear " + submittedName + ", you scored  " + score+"." );
+    if (score  <= 90) {
+      scoreMessage.append("you scored lower than average!");
+      } else if (90 < score  <= 109) {
+      scoreMessage.append("You are in the middle class of intelligence." );
+      } else if (109 < score  <= 119) {score
+      scoreMessage.append("Your intelligence is higher than average.");
+      } else if (119 < score  <= 129) {
+      scoreMessage.append("Congratulations! you are smart" );
+      } else if (129 < score  <= 144) {
+      scoreMessage.append("The world needs brilliant people like you" );
+      } else if (144 < score ) {
+      scoreMessage.append("Wonderful! you are a gifted");
+      }
   }
 
-  result =  output.length;
-  calc = 20 * result / 3;
-  score = Math.round(calc);
- 
+  
+  
 }
-
-if (score  <= 90) {
-  scoreMessage.append("Dear " + submittedName + ", you scored  " + score );
-} else if (90 < score  <= 109) {
-  scoreMessage.append("Dear" + submittedName + ", you scored" + score );
-} else if (109 < score  <= 119) {score
-  scoreMessage.append("Dear" + submittedName + ", you scored" + valueOfScore );
-} else if (119 < score  <= 129) {
-  scoreMessage.append("Dear" + submittedName + ", you scored" + score );
-} else if (129 < score  <= 144) {
-  scoreMessage.append("Dear" + submittedName + ", you scored" + score );
-} else if (144 < score ) {
-  scoreMessage.append("Dear" + submittedName + ", you scored" + score );
-}
-
-// creat timer
-
-// // creat article and append to body
-// let article = document.createElement("article");
-// body.appendChild(article)
-// // add class and id for article
-// article.classList.add("clock");
-// article.setAttribute("id","model3");
-// // crear a div for article and add class and add id and append to article
-// let artDiv = document.createElement("div");
-// artDiv.classList.add("count");
-// article.appendChild(artDiv)
-// // creat a div for artDiv
-// let divDiv = document.createElement("div");
-// divDiv.setAttribute("id","timer");
-// artDiv.appendChild(divDiv)
-// let creattimer = document.createElement("h3");
-// article.appendChild(creattimer)
-
-// if (score >=1 && score<=170) {
-//   console.log("your good");
-// }
-
-///////////////////////////////
-
-// //var sec = 1800,
-//     countDiv    = document.getElementById("timer"),
-//     secpass,
-//     countDown   = setInterval(function () {
-//         'use strict';
-
-//         secpass();
-//     }, 1000);
-
-// function secpass() {
-//     'use strict';
-
-//     var min     = Math.floor(sec / 60),
-//         remSec  = sec % 60;
-
-//     if (remSec < 10) {
-
-//         remSec = '0' + remSec;
-
-//     }
-//     if (min < 10) {
-
-//         min = '0' + min;
-
-//     }
-//     countDiv.innerHTML = min + ":" + remSec;
-
-//     if (sec > 0) {
-
-//         sec = sec - 1;
-
-//     } else {
-
-//       // when form is submitted change display
-//       // function submitName(e)
-//         clearInterval(countDown);
-
-//         countDiv.innerHTML = 'countdown done';
-
-//     }
-//   }
