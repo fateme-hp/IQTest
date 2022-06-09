@@ -127,7 +127,7 @@ body {
 #result-page{
   display: flex;
   flex-direction: column;
-  margin: 0 auto;
+  margin: 5% auto;
   background-color: #eee;
   padding: 2%;
   border-radius: 5px;
@@ -138,6 +138,14 @@ body {
 
 #result-page *{
  margin: 10px;
+}
+#result-page span{
+  font-size: 18px;
+  line-height: 25px;
+}
+#result-page img {
+  width: 300px;
+ margin: 10px auto;
 }
 
 #demo{

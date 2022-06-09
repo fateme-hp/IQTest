@@ -102,7 +102,7 @@ for (let i = 1; i <= 30; i++) {
   // create an image element
   let img = document.createElement("img");
   // set attributes for img
-  img.setAttribute("src", "images/" + [i] + "/test" + [i] + ".png"); //----یادت باشه برگردونی !!!
+  img.setAttribute("src", "./images/" + [i] + "/test" + [i] + ".png"); //----یادت باشه برگردونی !!!
   //append child to test image
   testImage.appendChild(img);
 
@@ -140,7 +140,7 @@ for (let i = 1; i <= 30; i++) {
   }
 }
 
-// creat a div for result page
+// create a div for result page
 
 // create a div with form id
 let resultPage = document.createElement("div");
@@ -151,17 +151,20 @@ resultPage.setAttribute("id", "result-page");
 // append child to body
 testSection.appendChild(resultPage);
 
-// create a h2 with form id
+// create a h2 for result page
 let formTitleResultPage = document.createElement("h2");
-
-// append child to first stage
+// append child to result page
 resultPage.appendChild(formTitleResultPage);
-
 //append h2
 formTitleResultPage.append("Your Final Score!");
 
 let scoreMessage = document.createElement("span");
 resultPage.appendChild(scoreMessage);
+
+// create a img for result page
+let resultImage = document.createElement("img");
+// append child to result page
+resultPage.appendChild(resultImage);
 
 // adding class of correct to correct answers
 // test 1
@@ -366,9 +369,11 @@ function check(clickedItem) {
     submittedName = localStorage.getItem("name")
     calc = 20 * result / 3;
     score = Math.round(calc);
-    scoreMessage.append("Dear " + submittedName + ", you scored  " + score+"." );
+    scoreMessage.append("Dear " + submittedName + ", you scored  " + score+",  " );
+      // set attributes for img
+      resultImage.setAttribute( "src","images/brain.webp");
     if (score  <= 90) {
-      scoreMessage.append("you scored lower than average!");
+      scoreMessage.append("Your IQ score is lower than average!");
       } else if (90 < score  <= 109) {
       scoreMessage.append("You are in the middle class of intelligence." );
       } else if (109 < score  <= 119) {score
