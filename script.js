@@ -3,14 +3,14 @@
 // select body
 let body = document.querySelector("body");
 
-// creat a p for timer
+// create a p for timer
 let p = document.createElement("p");
 // set att id ("demo")
 p.setAttribute("id", "demo");
 // append
 body.appendChild(p);
 
-// creat elements for result page
+// create elements for result page
 // create elements for the first stage
 
 // create a div with form id
